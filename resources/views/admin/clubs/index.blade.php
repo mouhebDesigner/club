@@ -15,7 +15,6 @@
                     <div class="row mb-2">
                         <div class="col-sm-6">
                         </div><!-- /.col -->
-                       
                     </div>
                 </div>
             </div>
@@ -33,10 +32,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="d-flex justify-content-between">
-                                            <h3 class="m-0">Liste des étudiants</h3>
-                                            <a href="{{ url('admin/etudiants/create') }}" class="add_button" title="ajouter un enseignant">
-                                                <i class="fa fa-plus"></i>
-                                            </a>
+                                            <h3 class="m-0">Liste des clubs</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -44,7 +40,6 @@
                             <!-- /.card-header -->
                             <div class="card-body">
                                 <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
-                                    
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <table id="example1" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
@@ -60,42 +55,23 @@
                                                             Email
                                                         </th>
                                                         <th>
-                                                            date de creation
-                                                        </th>
-                                                        
-                                                        <th>
-                                                            date de modification
-                                                        </th>
-                                                        <th>
-                                                            Action
+                                                            Numéro téléphone
                                                         </th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @foreach($etudiants as $etudiant)
+                                                    @foreach($clubs as $club)
                                                         <tr>
-                                                            <td>{{ $etudiant->nom }}</td>
-                                                            <td>{{ $etudiant->prenom }}</td>
-                                                            <td>{{ $etudiant->email }}</td>
-                                                            <td>{{ $etudiant->created_at }}</td>
-                                                            <td>{{ $etudiant->updated_at }}</td>
-                                                            <td>
-                                                                <div class="d-flex justify-content-around">
-                                                                    
-                                                                    <button type="submit" class="btn-delete delete-confirm" data-model="enseignant" data-url="{{ route('admin.etudiants.destroy', ['etudiant' => $etudiant]) }}" >
-                                                                        <i class="fa fa-trash"></i>
-                                                                    </button>
-                                                                    <a href="{{ url('admin/etudiants/'.$etudiant->id.'/edit') }}" data-model="enseignant" class="btn-edit edit-confirm">
-                                                                        <i class="fa fa-pen"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </td>
+                                                            <td>{{ $club->nom }}</td>
+                                                            <td>{{ $club->prenom }}</td>
+                                                            <td>{{ $club->email }}</td>
+                                                            <td>{{ $club->numtel }}</td> 
                                                         </tr>
                                                     @endforeach
                                                 </tbody>
                                             </table>
                                             <div class="d-flex justify-content-center">
-                                                {{ $etudiants->links() }}
+                                                {{ $clubs->links() }}
                                             </div>
                                         </div>
                                     </div>

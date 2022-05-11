@@ -14,9 +14,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Liste des concours</h1>
                         </div><!-- /.col -->
-                       
                     </div>
                 </div>
             </div>
@@ -30,14 +28,11 @@
                             <!-- /.card -->
 
                             <div class="card">
-                             <div class="card-header">
+                            <div class="card-header">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="d-flex justify-content-between">
-                                            <h3 class="m-0">Liste des concours</h3>
-                                            <a href="{{ url('admin/concours/create') }}" class="add_button" title="ajouter un concours">
-                                                <i class="fa fa-plus"></i>
-                                            </a>
+                                            <h3 class="m-0">Liste des membres</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -46,67 +41,39 @@
                             <div class="card-body">
                                 <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
                                     <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="d-flex justify-content-between">
-                                             
-                                              
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
                                         <div class="col-sm-12">
                                             <table id="example1" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
                                                 <thead>
                                                     <tr>
                                                         <th>
-                                                            #
+                                                            Nom
                                                         </th>
                                                         <th>
-                                                            Titre
+                                                            Prénom
                                                         </th>
                                                         <th>
-                                                            Date fin
-                                                        </th>
-                                                        
-                                                        <th>
-                                                            Date de création
-                                                        </th>
-                                                        
-                                                        <th>
-                                                            Date de modification
+                                                            Email
                                                         </th>
                                                         <th>
-                                                            Action
+                                                            Numéro téléphone
                                                         </th>
-
+                                                       
                                                     </tr>
-
                                                 </thead>
                                                 <tbody>
-                                                    @foreach($concours as $concour)
+                                                    @foreach($membres as $membre)
                                                         <tr>
-                                                            <td>{{ $concour->id }}</td>
-                                                            <td>{{ $concour->titre }}</td>
-                                                            <td>{{ $concour->date_fin }}</td>
-                                                            <td>{{ $concour->created_at }}</td>
-                                                            <td>{{ $concour->updated_at }}</td>
-                                                            <td>
-                                                                <div class="d-flex justify-content-around">
-                                                                    
-                                                                    <button type="submit" class="btn-delete delete-confirm" data-model="concour" data-url="{{ route('admin.concours.destroy', ['concour' => $concour]) }}" >
-                                                                        <i class="fa fa-trash"></i>
-                                                                    </button>
-                                                                    <a href="{{ url('admin/concours/'.$concour->id.'/edit') }}" data-model="concour" class="edit-confirm btn-edit">
-                                                                        <i class="fa fa-pen"></i>
-                                                                    </a>
-                                                                 
-                                                                </div>
-                                                            </td>
+                                                            <td>{{ $membre->nom }}</td>
+                                                            <td>{{ $membre->prenom }}</td>
+                                                            <td>{{ $membre->email }}</td>
+                                                            <td>{{ $membre->numtel }}</td> 
                                                         </tr>
                                                     @endforeach
                                                 </tbody>
-                                               
                                             </table>
+                                            <div class="d-flex justify-content-center">
+                                                {{ $membres->links() }}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -135,5 +102,4 @@
     <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
-    
 @endsection
