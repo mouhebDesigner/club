@@ -10,37 +10,37 @@
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome-free/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/back/plugins/fontawesome-free/css/all.min.css') }}">
     <!-- IonIcons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{ asset('assets/dist/css/adminlte.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/back/dist/css/adminlte.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/back/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/back/css/style.css') }}">
     @yield('css')
     
     
   </head>
-<body class=" sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed sidebar-closed sidebar-collapse" style="height: auto;">
+<body class=" sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed sidebar-closed" style="height: auto;">
 
     @yield('content')
     <!-- jQuery -->
-    <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/back/plugins/jquery/jquery.min.js') }}"></script>
     <!-- Bootstrap -->
-    <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/back/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- AdminLTE -->
-    <script src="{{ asset('assets/dist/js/adminlte.js') }}"></script>
+    <script src="{{ asset('assets/back/dist/js/adminlte.js') }}"></script>
 
 
     <!-- Main Javascript file -->
-    <script src="{{ asset('assets/dist/js/sweetalert.min.js') }}"></script>
+    <script src="{{ asset('assets/back/dist/js/sweetalert.min.js') }}"></script>
 
     <!-- OPTIONAL SCRIPTS -->
-    <script src="{{ asset('assets/plugins/chart.js/Chart.min.js') }}"></script>
+    <script src="{{ asset('assets/back/plugins/chart.js/Chart.min.js') }}"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="{{ asset('assets/dist/js/demo.js') }}"></script>
+    <script src="{{ asset('assets/back/dist/js/demo.js') }}"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="{{ asset('assets/dist/js/pages/dashboard3.js') }}"></script>
+    <script src="{{ asset('assets/back/dist/js/pages/dashboard3.js') }}"></script>
     @yield('script')
     <script>
       $(document).ready(function(){

@@ -22,7 +22,6 @@ class DatabaseSeeder extends Seeder
                 "prenom" => "admin",
                 "email" => "admin@gmail.com",
                 "numtel" => "12345678",
-                "genre" => "male",
                 "role" => "admin",
                 "password" => Hash::make("adminadmin"),
             ]

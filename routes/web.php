@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClubAdminController;
+use App\Http\Controllers\EventAdminController;
+use App\Http\Controllers\MembreAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +15,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// admin part
+Route::middleware(['auth'])->group(function () {
+    Route::prefix('admin')->name('admin.')->group(function () {
+        Route::resources([
+            'clubs' => ClubAdminController::class,
+            'evenements' => EventAdminController::class,
+            'membres' => MembreAdminController::class,
+        ]);
+    });
+});
 Route::get('/', function () {
     return view('welcome');
 });

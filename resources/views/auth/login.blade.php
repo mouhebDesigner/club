@@ -24,12 +24,12 @@
                                     </svg>
                                 </div>
                             </div>
+                            @error('email')
+                               <span class="invalid-feedback d-block" role="alert">
+                                   <strong>{{ $message }}</strong>
+                               </span>
+                            @enderror
                         </div>
-                         @error('email')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
                         <div class="form-element active">
                             <div class="d-flex justify-content-between">
                                 <label for="confirm-password">Password</label>
@@ -41,7 +41,7 @@
                             </div>
 
                             <div class="form-alert-input">
-                                <input type="password" placeholder="Type here..." id="confirm-password">
+                                <input type="password" name="password" placeholder="Mot de passe" id="confirm-password">
                                 <div class="form-alert-icon" onclick="showPassword('confirm-password',this);">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -51,12 +51,12 @@
                                     </svg>
                                 </div>
                             </div>
+                            @error('password')
+                                <span class="invalid-feedback d-block" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
-                        @error('password')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
 
                         <div class="form-element">
                             <button type="submit" class="button button-lg button--primary w-100">Connecter</button>
